@@ -2,8 +2,8 @@
 # coding: utf-8
 
 import requests
-from flask import request, jsonify
 import os
+from flask import request, jsonify
 from xml.etree import ElementTree
 from azure.ai.documentintelligence import DocumentIntelligenceClient
 from azure.core.credentials import AzureKeyCredential
