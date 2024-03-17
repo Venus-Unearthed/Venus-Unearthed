@@ -1,11 +1,8 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
-
-
-from flask import Flask, request, jsonify
 import requests
+from flask import request, jsonify
 import os
 from xml.etree import ElementTree
 from azure.ai.documentintelligence import DocumentIntelligenceClient
