@@ -1,4 +1,4 @@
-from .code.hackathon.resumeDocAnalyser import readBlobs
+from hackathon.resumeDocAnalyser import readBlobs
 from flask import Flask, request, jsonify
 
 app = Flask(__name__)
