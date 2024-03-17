@@ -12,7 +12,6 @@ from azure.ai.documentintelligence import DocumentIntelligenceClient
 from azure.core.credentials import AzureKeyCredential
 from azure.search.documents import SearchClient
 
-app = Flask(__name__)
 endpoint = "https://resumeanalyser.cognitiveservices.azure.com/"
 key = "d6bb5644282347b8a9c74626a13e48bc"
 document_intelligence_client = DocumentIntelligenceClient(endpoint=endpoint, credential=AzureKeyCredential(key))
@@ -23,16 +22,7 @@ index_name = "resume-match"
 search_key = "kgR8HvvJ1SynLR68XQoVQKM13J4MTQxNLB9yP1txigAzSeChpQKh"
 search_client = SearchClient(endpoint=search_endpoint, index_name=index_name, credential=AzureKeyCredential(search_key))
 azure_url = ''
-# Define a route for your API endpoint
-@app.route('/hackathon2024/team343/search', methods=['POST'])
-def api():
-    print('api call started')
-    data = request.json  # Get JSON data from the request body
-    azure_url = data.get("inputPath")
-    readBlobs(azure_url)
-    # Process the data as needed
-    result = {"message": "Received data", "data": data}
-    return jsonify(result)
+
 
 def readBlobs(url):
     print('reading blob started..')
@@ -88,10 +78,6 @@ def search_client(context):
     print('calling search client')
     result = search_client.search(search_text=context)
 
-
-
-if __name__ == '__main__':
-    app.run(debug=True,use_reloader=False)
 
 
 # In[ ]:
