@@ -3,10 +3,6 @@ from flask import Flask, request, jsonify
 import subprocess
 import requests
 
-def install_dependecies():
-    subprocess.ceck_call(["pip","install","-r","requirements.txt"])
-    print("done")
-
 app = Flask(__name__)
 
 # Define a route for your API endpoint
@@ -39,5 +35,4 @@ def search_api():
 
 
 if __name__ == '__main__':
-    install_dependecies()
     app.run(debug=True,use_reloader=False)
