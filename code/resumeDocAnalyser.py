@@ -5,8 +5,8 @@
 
 
 from flask import Flask, request, jsonify
-import requests
 import os
+import requests
 from xml.etree import ElementTree
 from azure.ai.documentintelligence import DocumentIntelligenceClient
 from azure.core.credentials import AzureKeyCredential
