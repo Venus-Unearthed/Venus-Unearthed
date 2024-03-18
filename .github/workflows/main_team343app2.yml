@@ -24,11 +24,11 @@ jobs:
 
       - name: Create and start virtual environment
         run: |
-          python -m venv antenv
-          source antenv/bin/activate
+          python -m venv venv
+          source venv/bin/activate
       
       - name: Install dependencies
-        run: python3 -m pip install -r requirements.txt
+        run: pip install -r requirements.txt
         
       # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
 
@@ -41,7 +41,7 @@ jobs:
           name: python-app
           path: |
             release.zip
-            !antenv/
+            !venv/
 
   deploy:
     runs-on: ubuntu-latest
@@ -66,4 +66,4 @@ jobs:
         with:
           app-name: 'team343App2'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_099772190E63464183585FA3FCCDEFE8 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_AAB720D0FAE54412A11BA520FEE2D33F }}
