@@ -7,7 +7,7 @@ def install_dependecies():
     try:
         subprocess.ceck_call(["pip","install","-r","requirements.txt"])
         print("done")
-    except: subprocess.CalledProcessError as e
+    except: subprocess.CalledProcessError as e:
         print("error")
 app = Flask(__name__)
 
