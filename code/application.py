@@ -4,11 +4,9 @@ import subprocess
 import requests
 
 def install_dependecies():
-    try:
-        subprocess.ceck_call(["pip","install","-r","requirements.txt"])
-        print("done")
-    except: subprocess.CalledProcessError as e:
-        print("error")
+    subprocess.ceck_call(["pip","install","-r","requirements.txt"])
+    print("done")
+
 app = Flask(__name__)
 
 # Define a route for your API endpoint
